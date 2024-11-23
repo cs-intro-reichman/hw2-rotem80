@@ -4,7 +4,6 @@ public class Cheers {
             System.out.println("Usage: java Cheers <word> <repeatCount>");
             return;
         }
-
         String inputWord = args[0];
         int repeatCount = Integer.parseInt(args[1]);
         String upperCaseWord = inputWord.toUpperCase();
