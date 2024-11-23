@@ -19,7 +19,7 @@ public class CalcPi {
         }
 
         double estimatedPi = piApproximation * 4.0;
-        System.out.println("Pi according to Java: 3.141592653589793");
-        System.out.printf("Approximated pi: %20.15f\n", estimatedPi);
+        System.out.println("pi according to Java: 3.141592653589793");
+        System.out.printf("pi, approximated: %20.15f\n", estimatedPi);
     }
 }
