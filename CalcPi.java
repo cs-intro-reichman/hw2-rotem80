@@ -4,6 +4,7 @@ public class CalcPi {
             System.out.println("Usage: java CalcPi <iterations>");
             return;
         }
+
         int iterations = Integer.parseInt(args[0]);
         double piApproximation = 0.0;
         double denominator = 1.0;
