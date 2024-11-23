@@ -9,7 +9,7 @@ public class Collatz {
               int stepCount = 1;
               int currentNumber = startingNumber;
               System.out.print(currentNumber + " ");
-  
+              
               do {
                  if (currentNumber % 2 != 0) {
                     currentNumber = currentNumber * 3 + 1;
