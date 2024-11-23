@@ -1,29 +1,31 @@
 public class Cheers {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Error: Please provide a name and a number of repetitions.");
+            System.out.println("Usage: java Cheers <name> <repeatCount>");
             return;
         }
 
         String name = args[0];
-        int numRepeats = Integer.parseInt(args[1]);
-        String upperName = name.toUpperCase();
-        String vowels = "AEIOU"; // Correct vowels
-
-        // Loop through each character in the name
-        for (int i = 0; i < upperName.length(); i++) {
-            char ch = upperName.charAt(i);
-            // Correctly check if the character is a vowel or consonant
-            if (vowels.indexOf(ch) != -1) {
-                System.out.println("Give me an " + ch + ": " + ch + "!");
-            } else {
-                System.out.println("Give me a " + ch + ": " + ch + "!");
-            }
+        int repeatCount = 0;
+        try {
+            repeatCount = Integer.parseInt(args[1]);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number for repeatCount. Please enter an integer.");
+            return;
         }
 
-        // Print the question and repeat the name
+        String upperName = name.toUpperCase();
+        for (int i = 0; i < repeatCount; i++) {
+            System.out.print("Give me a ");
+            for (int j = 0; j < upperName.length(); j++) {
+                char ch = upperName.charAt(j);
+                System.out.print(ch + ": " + ch + " ");
+            }
+            System.out.println();
+        }
+
         System.out.println("What does that spell?");
-        for (int i = 0; i < numRepeats; i++) {
+        for (int i = 0; i < repeatCount; i++) {
             System.out.println(upperName + "!!!");
         }
     }
