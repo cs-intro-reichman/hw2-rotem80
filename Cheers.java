@@ -8,11 +8,12 @@ public class Cheers {
         String inputWord = args[0];
         int repeatCount = Integer.parseInt(args[1]);
         String upperCaseWord = inputWord.toUpperCase();
-        String vowels = "AEIOU";
 
         for (int charIndex = 0; charIndex < upperCaseWord.length(); ++charIndex) {
             char currentChar = upperCaseWord.charAt(charIndex);
-            if ("AEIOU".indexOf(currentChar) != -1) {
+            boolean isVowel = "AEIOU".indexOf(currentChar) != -1;
+
+            if (isVowel) {
                 System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
             } else {
                 System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
