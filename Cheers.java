@@ -1,32 +1,25 @@
 public class Cheers {
     public static void main(String[] args) {
-        if (args.length < 2) {
-            System.out.println("Usage: java Cheers <name> <repeatCount>");
-            return;
-        }
+        String word = args[0];
+        int repeatCount = Integer.parseInt(args[1]);
+        String upperWord = word.toUpperCase();
+        String specialChars = "AEFHILMNORSX";
 
-        String name = args[0];
-        int repeatCount = 0;
-        try {
-            repeatCount = Integer.parseInt(args[1]);
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid number for repeatCount. Please enter an integer.");
-            return;
-        }
-
-        String upperName = name.toUpperCase();
-        for (int i = 0; i < repeatCount; i++) {
-            System.out.print("Give me a ");
-            for (int j = 0; j < upperName.length(); j++) {
-                char ch = upperName.charAt(j);
-                System.out.print(ch + ": " + ch + " ");
+        for (int i = 0; i < upperWord.length(); i++) {
+            char letter = upperWord.charAt(i);
+            if (specialChars.indexOf(letter) == -1) {
+                System.out.println("Give me a " + letter + ": " + letter + "!");
+            } else {
+                System.out.println("Give me an " + letter + ": " + letter + "!");
             }
-            System.out.println();
         }
 
+        int counter = 0;
         System.out.println("What does that spell?");
-        for (int i = 0; i < repeatCount; i++) {
-            System.out.println(upperName + "!!!");
+
+        while (counter < repeatCount) {
+            System.out.println(upperWord + "!!!");
+            counter++;
         }
     }
 }
