@@ -33,6 +33,9 @@ public class Collatz {
                     }
                     stepCount++;
                 }
+            } else {
+                System.out.println("Invalid mode. Please use 'v' for verbose or 'c' for count.");
+                return;
             }
         }
 

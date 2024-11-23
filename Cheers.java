@@ -10,10 +10,9 @@ public class Cheers {
         String upperCaseWord = inputWord.toUpperCase();
         String vowels = "AEIOU";
 
-        // Print "Give me" statements
         for (int charIndex = 0; charIndex < upperCaseWord.length(); ++charIndex) {
             char currentChar = upperCaseWord.charAt(charIndex);
-            if (vowels.indexOf(currentChar) != -1) {
+            if ("AEIOU".indexOf(currentChar) != -1) {
                 System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
             } else {
                 System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
@@ -22,7 +21,6 @@ public class Cheers {
 
         System.out.println("What does that spell?");
 
-        // Repeat the word
         for (int i = 0; i < repeatCount; i++) {
             System.out.println(upperCaseWord + "!!!");
         }

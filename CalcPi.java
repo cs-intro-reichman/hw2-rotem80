@@ -9,7 +9,6 @@ public class CalcPi {
         double piApproximation = 0.0;
         double denominator = 1.0;
 
-        // Loop to calculate the approximation of Pi
         for (int i = 0; i < iterations; i++) {
             if (i % 2 == 0) {
                 piApproximation += 1.0 / denominator;
