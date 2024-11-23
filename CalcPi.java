@@ -24,15 +24,16 @@ public class CalcPi {
         System.out.println("Pi, approximated: " + pi);
 
         String upperName = name.toUpperCase();
+        String vowels = "AEIOU";
         for (int i = 0; i < upperName.length(); i++) {
             char ch = upperName.charAt(i);
-            if ("AEFHILMNORSX".indexOf(ch) == -1) {
+            if (vowels.indexOf(ch) == -1) {
                 System.out.println("Give me a " + ch + ": " + ch + "!");
             } else {
                 System.out.println("Give me an " + ch + ": " + ch + "!");
             }
         }
-        
+
         System.out.println("What does that spell?");
         for (int i = 0; i < repeatCount; i++) {
             System.out.println(upperName + "!!!");

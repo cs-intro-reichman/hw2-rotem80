@@ -12,19 +12,21 @@ public class Collatz {
             for (int startValue = 1; startValue <= limit; startValue++) {
                 int number = startValue;
                 int count = 0;
-                System.out.print(number + " ");
+                StringBuilder sequence = new StringBuilder();
 
                 while (number != 1) {
+                    sequence.append(number).append(" ");
                     if (number % 2 == 0) {
                         number /= 2;
                     } else {
                         number = number * 3 + 1;
                     }
-                    System.out.print(number + " ");
                     count++;
                 }
+                sequence.append("1");
+                count++;
 
-                System.out.println("(" + (count + 1) + ")");
+                System.out.println(sequence.toString() + " (" + count + ")");
             }
 
             System.out.println("Every one of the first " + limit + " hailstone sequences reached 1.");

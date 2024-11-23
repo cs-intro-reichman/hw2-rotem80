@@ -13,11 +13,11 @@ public class Cheers {
         // Loop through each character in the name
         for (int i = 0; i < upperName.length(); i++) {
             char ch = upperName.charAt(i);
-            // Correctly check if the character is a vowel or not
-            if (vowels.indexOf(ch) == -1) {
-                System.out.println("Give me a " + ch + ": " + ch + "!");
-            } else {
+            // Correctly check if the character is a vowel or consonant
+            if (vowels.indexOf(ch) != -1) {
                 System.out.println("Give me an " + ch + ": " + ch + "!");
+            } else {
+                System.out.println("Give me a " + ch + ": " + ch + "!");
             }
         }
 
