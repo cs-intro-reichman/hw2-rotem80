@@ -1,8 +1,8 @@
 public class Cheers {
     public static void main(String[] args) {
-        if (args.length < 2) {  
+        if (args.length < 2) {
             System.out.println("Error: Please provide a name and a number of repetitions.");
-            return;  
+            return;
         }
 
         String name = args[0];
@@ -20,7 +20,7 @@ public class Cheers {
         }
 
         System.out.println("What does that spell?");
-        for (int i = 0; i < numRepeats; i++) { 
+        for (int i = 0; i < numRepeats; i++) {
             System.out.println(upperName + "!!!");
         }
     }
