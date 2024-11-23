@@ -15,7 +15,6 @@ public class CalcPi {
             } else {
                 piApproximation -= 1.0 / denominator;
             }
-
             denominator += 2.0;
         }
 

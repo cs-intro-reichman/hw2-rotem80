@@ -9,23 +9,24 @@ public class Cheers {
         int repeatCount = Integer.parseInt(args[1]);
         String upperCaseWord = inputWord.toUpperCase();
         String specialChars = "AEFHILMNORSX";
+        String vowels = "AEIOU";
 
-        int charIndex;
-        for (charIndex = 0; charIndex < upperCaseWord.length(); ++charIndex) {
-            char currentChar = upperCaseWord.charAt(charIndex);
+        for (int i = 0; i < upperCaseWord.length(); i++) {
+            char currentChar = upperCaseWord.charAt(i);
             if (specialChars.indexOf(currentChar) == -1) {
                 System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
             } else {
-                System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
+                if (vowels.indexOf(currentChar) != -1) {
+                    System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
+                } else {
+                    System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
+                }
             }
         }
 
-        charIndex = 0;
         System.out.println("What does that spell?");
-
-        while (charIndex < repeatCount) {
+        for (int i = 0; i < repeatCount; i++) {
             System.out.println(upperCaseWord + "!!!");
-            ++charIndex;
         }
     }
 }

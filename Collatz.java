@@ -4,11 +4,11 @@ public class Collatz {
             System.out.println("Usage: java Collatz <numberOfSequences> <mode>");
             return;
         }
-
+        
         int numberOfSequences = Integer.parseInt(args[0]);
         String mode = args[1];
         int startingNumber = 1;
-
+  
         if (mode.equals("v")) {
             for (int sequenceIndex = 0; sequenceIndex < numberOfSequences; sequenceIndex++) {
                 int stepCount = 1;
@@ -23,15 +23,13 @@ public class Collatz {
                         currentNumber /= 2;
                         System.out.print(currentNumber + " ");
                     }
-
                     stepCount++;
                 } while (currentNumber != 1);
-
+                
                 System.out.print("(" + stepCount + ")");
                 System.out.println();
                 startingNumber++;
             }
-
             System.out.println("Every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
         } else {
             System.out.println("Every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
