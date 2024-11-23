@@ -24,7 +24,7 @@ public class Collatz {
                     stepCount++;
                 }
                 System.out.println("(" + stepCount + ")");
-            } else {
+            } else if (mode.equals("c")) {
                 while (currentNumber != 1) {
                     if (currentNumber % 2 == 0) {
                         currentNumber /= 2;
