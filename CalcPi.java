@@ -12,8 +12,8 @@ public class CalcPi {
        
         double piApprox = 0.0;
 
-       
         for (int i = 0; i < terms; i++) {
+           
             double term = 1.0 / (2 * i + 1);
             if (i % 2 == 1) {
                 piApprox -= term; 
@@ -22,11 +22,12 @@ public class CalcPi {
             }
         }
 
-       
+        
         piApprox *= 4;
 
-      
         System.out.println("pi according to Java: " + Math.PI);
-        System.out.printf("pi, approximated: %.15f\n", piApprox); // הצגה עם דיוק של 15 ספרות
+
+      
+        System.out.println("pi, approximated: " + String.format("%.15f", piApprox));
     }
 }
