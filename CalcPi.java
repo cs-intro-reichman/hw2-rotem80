@@ -1,6 +1,18 @@
 public class CalcPi {
     public static void main(String[] args) {
-        int iterations = Integer.parseInt(args[0]);
+        if (args.length < 1) {
+            System.out.println("Please provide the number of iterations as an argument.");
+            return;
+        }
+
+        int iterations = 0;
+        try {
+            iterations = Integer.parseInt(args[0]);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please provide a valid integer.");
+            return;
+        }
+
         double approximation = 0.0;
         double denominator = 1.0;
 

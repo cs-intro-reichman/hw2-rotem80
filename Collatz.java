@@ -27,8 +27,7 @@ public class Collatz {
                     steps++;
                 }
 
-                System.out.print(sequence.toString().trim() + " ");
-                System.out.println("(" + steps + ")");
+                System.out.println(sequence.toString().trim() + " (" + steps + ")");
                 start++;
             }
 
