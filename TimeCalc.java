@@ -9,6 +9,6 @@ public class TimeCalc {
         totalMinutes += minutesToAdd;
         int newHours = (totalMinutes / 60) % 24;
         int newMinutes = totalMinutes % 60;
-        System.out.printf( "%02d:%02d\n", newHours, newMinutes);
+        System.out.printf( "%02d:%02d\n" , newHours, newMinutes);
             }
         }

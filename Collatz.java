@@ -4,35 +4,38 @@ public class Collatz {
             System.out.println("Usage: java Collatz <numberOfSequences> <mode>");
             return;
         }
-        
+
         int numberOfSequences = Integer.parseInt(args[0]);
         String mode = args[1];
-        int startingNumber = 1;
-  
-        if (mode.equals("v")) {
-            for (int sequenceIndex = 0; sequenceIndex < numberOfSequences; sequenceIndex++) {
-                int stepCount = 1;
-                int currentNumber = startingNumber;
+
+        for (int seed = 1; seed <= numberOfSequences; seed++) {
+            int currentNumber = seed;
+            int stepCount = 1;
+
+            if (mode.equals("v")) {
                 System.out.print(currentNumber + " ");
-                
-                do {
-                    if (currentNumber % 2 != 0) {
-                        currentNumber = currentNumber * 3 + 1;
-                        System.out.print(currentNumber + " ");
-                    } else {
+                while (currentNumber != 1) {
+                    if (currentNumber % 2 == 0) {
                         currentNumber /= 2;
-                        System.out.print(currentNumber + " ");
+                    } else {
+                        currentNumber = currentNumber * 3 + 1;
+                    }
+                    System.out.print(currentNumber + " ");
+                    stepCount++;
+                }
+                System.out.println("(" + stepCount + ")");
+            } else {
+                while (currentNumber != 1) {
+                    if (currentNumber % 2 == 0) {
+                        currentNumber /= 2;
+                    } else {
+                        currentNumber = currentNumber * 3 + 1;
                     }
                     stepCount++;
-                } while (currentNumber != 1);
-                
-                System.out.print("(" + stepCount + ")");
-                System.out.println();
-                startingNumber++;
+                }
             }
-            System.out.println("Every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
-        } else {
-            System.out.println("Every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
         }
+
+        System.out.println("Every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
     }
 }
