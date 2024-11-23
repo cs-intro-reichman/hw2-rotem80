@@ -1,23 +1,22 @@
-public class Cheers {
+public class CalcPi {
     public static void main(String[] args) {
-        if (args.length < 2) {
-            System.out.println("Usage: java Cheers <input> <repetitions>");
-            return;
+        String name = args[0];
+        int repeatCount = Integer.parseInt(args[1]);
+        String upperName = name.toUpperCase();
+        String vowels = "AEFHILMNORSX";
+
+        for (int i = 0; i < upperName.length(); i++) {
+            char ch = upperName.charAt(i);
+            if (vowels.indexOf(ch) == -1) {
+                System.out.println("Give me a " + ch + ": " + ch + "!");
+            } else {
+                System.out.println("Give me an " + ch + ": " + ch + "!");
+            }
         }
-        String input = args[0].toUpperCase();  
-        int repetitions = Integer.parseInt(args[1]); 
-        for (int i = 0; i < input.length(); i++) {
-            char ch = input.charAt(i);  
-            String article = (isVowel(ch)) ? "an" : "a";  // בדיקה אם התו הוא תנועה
-            System.out.println("Give me " + article + " " + ch + ": " + ch + "!");
-        }
+        
         System.out.println("What does that spell?");
-        for (int i = 0; i < repetitions; i++) {
-            System.out.println(input + "!!!");
+        for (int i = 0; i < repeatCount; i++) {
+            System.out.println(upperName + "!!!");
         }
     }
-    private static boolean isVowel(char ch) {
-        String vowels = "AEIOU";  
-        return vowels.indexOf(ch) >= 0;
-    }
-}
+}   
