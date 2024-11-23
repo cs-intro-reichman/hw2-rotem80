@@ -1,7 +1,12 @@
-public class CalcPi {
+public class Cheers {
     public static void main(String[] args) {
+        if (args.length < 2) {  
+            System.out.println("Error: Please provide a name and a number of repetitions.");
+            return;  
+        }
+
         String name = args[0];
-        int repeatCount = Integer.parseInt(args[1]);
+        int numRepeats = Integer.parseInt(args[1]);  
         String upperName = name.toUpperCase();
         String vowels = "AEFHILMNORSX";
 
@@ -13,10 +18,10 @@ public class CalcPi {
                 System.out.println("Give me an " + ch + ": " + ch + "!");
             }
         }
-        
+
         System.out.println("What does that spell?");
-        for (int i = 0; i < repeatCount; i++) {
+        for (int i = 0; i < numRepeats; i++) { 
             System.out.println(upperName + "!!!");
         }
     }
-}   
+}
