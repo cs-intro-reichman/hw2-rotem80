@@ -6,12 +6,14 @@ public class Cheers {
         }
 
         String name = args[0];
-        int numRepeats = Integer.parseInt(args[1]);  
+        int numRepeats = Integer.parseInt(args[1]);
         String upperName = name.toUpperCase();
-        String vowels = "AEFHILMNORSX";
+        String vowels = "AEIOU"; // Correct vowels
 
+        // Loop through each character in the name
         for (int i = 0; i < upperName.length(); i++) {
             char ch = upperName.charAt(i);
+            // Correctly check if the character is a vowel or not
             if (vowels.indexOf(ch) == -1) {
                 System.out.println("Give me a " + ch + ": " + ch + "!");
             } else {
@@ -19,6 +21,7 @@ public class Cheers {
             }
         }
 
+        // Print the question and repeat the name
         System.out.println("What does that spell?");
         for (int i = 0; i < numRepeats; i++) {
             System.out.println(upperName + "!!!");
