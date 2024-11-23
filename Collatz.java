@@ -27,9 +27,11 @@ public class Collatz {
                 System.out.println("(" + (count + 1) + ")");
             }
 
-            System.out.println("All sequences from 1 to " + limit + " reached 1.");
+            System.out.println("Every one of the first " + limit + " hailstone sequences reached 1.");
+        } else if (mode.equals("c")) {
+            System.out.println("Every one of the first " + limit + " hailstone sequences reached 1.");
         } else {
-            System.out.println("All sequences from 1 to " + limit + " reached 1.");
+            System.out.println("Invalid mode. Please use 'v' for verbose or 'c' for concise output.");
         }
     }
 }
