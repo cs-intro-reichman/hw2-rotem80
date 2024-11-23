@@ -4,7 +4,7 @@ public class CalcPi {
             System.out.println("Usage: java CalcPi <name> <repeatCount>");
             return;
         }
-        
+
         String name = args[0];
         int repeatCount = 0;
         try {
@@ -14,12 +14,19 @@ public class CalcPi {
             return;
         }
 
-        String upperName = name.toUpperCase();
-        String vowels = "AEFHILMNORSX";
+        double pi = 0.0;
+        for (int i = 0; i < repeatCount; i++) {
+            pi += Math.pow(-1, i) / (2 * i + 1);
+        }
+        pi *= 4;
 
+        System.out.println("Pi according to Java: " + Math.PI);
+        System.out.println("Pi, approximated: " + pi);
+
+        String upperName = name.toUpperCase();
         for (int i = 0; i < upperName.length(); i++) {
             char ch = upperName.charAt(i);
-            if (vowels.indexOf(ch) == -1) {
+            if ("AEFHILMNORSX".indexOf(ch) == -1) {
                 System.out.println("Give me a " + ch + ": " + ch + "!");
             } else {
                 System.out.println("Give me an " + ch + ": " + ch + "!");
@@ -27,7 +34,6 @@ public class CalcPi {
         }
         
         System.out.println("What does that spell?");
-        
         for (int i = 0; i < repeatCount; i++) {
             System.out.println(upperName + "!!!");
         }
