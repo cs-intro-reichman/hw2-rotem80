@@ -1,25 +1,25 @@
 public class CalcPi {
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.out.println("Usage: java CalcPi <iterations>");
+            System.out.println("Usage: java CalcPi <numTerms>");
             return;
         }
 
-        int iterations = Integer.parseInt(args[0]);
-        double piApproximation = 0.0;
-        double denominator = 1.0;
+        int numTerms = Integer.parseInt(args[0]);
+        double piApproximation = 0;
 
-        for (int i = 0; i < iterations; i++) {
+        for (int i = 0; i < numTerms; i++) {
+            double term = 1.0 / (2 * i + 1);
             if (i % 2 == 0) {
-                piApproximation += 1.0 / denominator;
+                piApproximation += term;
             } else {
-                piApproximation -= 1.0 / denominator;
+                piApproximation -= term;
             }
-            denominator += 2.0;
         }
 
-        double estimatedPi = piApproximation * 4.0;
-        System.out.println("pi according to Java: 3.141592653589793");
-        System.out.printf("pi, approximated: %19.15f\n", estimatedPi);
+        piApproximation *= 4;
+
+        System.out.println("pi according to Java: " + Math.PI);
+        System.out.println("pi, approximated:     " + piApproximation);
     }
 }

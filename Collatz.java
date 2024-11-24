@@ -1,44 +1,44 @@
 public class Collatz {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Usage: java Collatz <numberOfSequences> <mode>");
+            System.out.println("Usage: java Collatz <N> <mode>");
             return;
         }
 
-        int numberOfSequences = Integer.parseInt(args[0]);
-        String mode = args[1];
+        int N = Integer.parseInt(args[0]);
+        String mode = args[1].toLowerCase();
 
-        for (int seed = 1; seed <= numberOfSequences; seed++) {
+        boolean allSequencesReachOne = true;
+
+        for (int seed = 1; seed <= N; seed++) {
             int currentNumber = seed;
             int stepCount = 1;
 
             if (mode.equals("v")) {
                 System.out.print(currentNumber + " ");
-                while (currentNumber != 1) {
-                    if (currentNumber % 2 == 0) {
-                        currentNumber /= 2;
-                    } else {
-                        currentNumber = currentNumber * 3 + 1;
-                    }
+            }
+
+            while (currentNumber != 1) {
+                if (currentNumber % 2 == 0) {
+                    currentNumber /= 2;
+                } else {
+                    currentNumber = currentNumber * 3 + 1;
+                }
+                if (mode.equals("v")) {
                     System.out.print(currentNumber + " ");
-                    stepCount++;
                 }
+                stepCount++;
+            }
+
+            if (mode.equals("v")) {
                 System.out.println("(" + stepCount + ")");
-            } else if (mode.equals("c")) {
-                while (currentNumber != 1) {
-                    if (currentNumber % 2 == 0) {
-                        currentNumber /= 2;
-                    } else {
-                        currentNumber = currentNumber * 3 + 1;
-                    }
-                    stepCount++;
-                }
-            } else {
-                System.out.println("Invalid mode. Please use 'v' for verbose or 'c' for count.");
-                return;
+            }
+
+            if (mode.equals("c") && currentNumber == 1) {
+                System.out.println("Sequence for " + seed + " reached 1 in " + stepCount + " steps.");
             }
         }
 
-        System.out.println("every one of the first " + numberOfSequences + " hailstone sequences reached 1.");
+        System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
     }
 }

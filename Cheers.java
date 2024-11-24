@@ -1,29 +1,29 @@
 public class Cheers {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Usage: java Cheers <word> <repeatCount>");
+            System.out.println("Usage: java Cheers <name> <num>");
             return;
         }
 
-        String inputWord = args[0];
-        int repeatCount = Integer.parseInt(args[1]);
-        String upperCaseWord = inputWord.toUpperCase();
+        String name = args[0].toUpperCase();
+        int num = Integer.parseInt(args[1]);
 
-        for (int charIndex = 0; charIndex < upperCaseWord.length(); ++charIndex) {
-            char currentChar = upperCaseWord.charAt(charIndex);
-            boolean isVowel = "AEIOU".indexOf(currentChar) != -1;
+        String vowelsAndSpecial = "AEFHILMNORSX";
 
-            if (isVowel) {
-                System.out.println("Give me an " + currentChar + ": " + currentChar + "!");
+        for (int i = 0; i < name.length(); i++) {
+            char ch = name.charAt(i);
+
+            if (vowelsAndSpecial.indexOf(ch) != -1) {
+                System.out.println("Give me an " + ch + ": " + ch + "!");
             } else {
-                System.out.println("Give me a " + currentChar + ": " + currentChar + "!");
+                System.out.println("Give me a " + ch + ": " + ch + "!");
             }
         }
 
-        System.out.println("What does that spell?");
-
-        for (int i = 0; i < repeatCount; i++) {
-            System.out.println(upperCaseWord + "!!!");
+        System.out.print("What does that spell?\n");
+        for (int i = 0; i < num; i++) {
+            System.out.print(name + "!!!");
         }
+        System.out.println();
     }
 }
