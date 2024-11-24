@@ -8,16 +8,12 @@ public class Collatz {
         int N = Integer.parseInt(args[0]);
         String mode = args[1].toLowerCase();
 
-        @SuppressWarnings("unused")
-        boolean allSequencesReachOne = true;
-
         for (int seed = 1; seed <= N; seed++) {
             int currentNumber = seed;
             int stepCount = 1;
 
-            if (mode.equals("v")) {
-                System.out.print(currentNumber + " ");
-            }
+            StringBuilder sequence = new StringBuilder();
+            sequence.append(currentNumber).append(" ");
 
             while (currentNumber != 1) {
                 if (currentNumber % 2 == 0) {
@@ -25,17 +21,18 @@ public class Collatz {
                 } else {
                     currentNumber = currentNumber * 3 + 1;
                 }
-                if (mode.equals("v")) {
-                    System.out.print(currentNumber + " ");
-                }
+                
+                sequence.append(currentNumber).append(" ");
                 stepCount++;
             }
 
+            sequence.append(1).append(" ");
+
             if (mode.equals("v")) {
-                System.out.println("(" + stepCount + ")");
+                System.out.println(sequence.toString().trim() + " (" + stepCount + ")");
             }
 
-            if (mode.equals("c") && currentNumber == 1) {
+            if (mode.equals("c")) {
                 System.out.println("Sequence for " + seed + " reached 1 in " + stepCount + " steps.");
             }
         }

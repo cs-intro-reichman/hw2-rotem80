@@ -23,11 +23,10 @@ public class Cheers {
         System.out.println("What does that spell?");
 
         for (int i = 0; i < num; i++) {
-            System.out.print(name + "!!!");
-
-            if (i < num - 1) {
-                System.out.print(" ");
+            if (i > 0) {
+                System.out.print(" "); 
             }
+            System.out.print(name + "!!!");
         }
 
         System.out.println();
