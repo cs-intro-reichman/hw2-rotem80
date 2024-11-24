@@ -12,10 +12,10 @@ public class Cheers {
 
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
-            if (vowels.indexOf(letter) != -1) {
-                System.out.println("Give me an " + letter + ": " + letter + "!");
-            } else {
+            if (vowels.indexOf(letter) == -1) {
                 System.out.println("Give me a " + letter + ": " + letter + "!");
+            } else {
+                System.out.println("Give me an " + letter + ": " + letter + "!");
             }
         }
         

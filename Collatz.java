@@ -8,34 +8,33 @@ public class Collatz {
         int N = Integer.parseInt(args[0]);
         String mode = args[1].toLowerCase();
 
-        for (int seed = 1; seed <= N; seed++) {
-            int currentNumber = seed;
-            int stepCount = 1;
+        if (mode.equals("v")) {
+            int var4 = 1;
+            for (int var6 = 0; var6 < N; ++var6) {
+                int currentNumber = var4;
+                int stepCount = 1;
 
-            StringBuilder sequence = new StringBuilder();
+                System.out.print(currentNumber + " "); // הדפסת המספר הראשון
 
-            while (currentNumber != 1) {
-                sequence.append(currentNumber).append(" ");
-                if (currentNumber % 2 == 0) {
-                    currentNumber /= 2;
-                } else {
-                    currentNumber = currentNumber * 3 + 1;
-                }
-                stepCount++;
+                do {
+                    if (currentNumber % 2 != 0) {
+                        currentNumber = currentNumber * 3 + 1;
+                        System.out.print(currentNumber + " "); // הדפסת המספר לאחר הפעולה
+                    } else {
+                        currentNumber /= 2;
+                        System.out.print(currentNumber + " "); // הדפסת המספר לאחר הפעולה
+                    }
+                    stepCount++;
+                } while (currentNumber != 1);
+
+                System.out.print("(" + stepCount + ")");
+                System.out.println();
+                var4++;
             }
-            sequence.append(1).append(" ");
 
-            if (mode.equals("v")) {
-                
-                System.out.println(sequence.toString().trim() + " (" + stepCount + ")");
-            }
-
-            if (mode.equals("c")) {
-
-                System.out.println(sequence.toString().trim() + " (" + stepCount + ")");
-            }
+            System.out.println("every one of the first " + N + " hailstone sequences reached 1.");
+        } else {
+            System.out.println("every one of the first " + N + " hailstone sequences reached 1.");
         }
-
-        System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
     }
 }
