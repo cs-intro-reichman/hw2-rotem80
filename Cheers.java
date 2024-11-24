@@ -5,10 +5,10 @@ public class Cheers {
             return;
         }
 
-        String word = args[0].toUpperCase();
-        int count = Integer.parseInt(args[1]);
+        String word = args[0].toUpperCase(); 
+        int count = Integer.parseInt(args[1]); 
 
-        String vowels = "AEFHILMNORSX";
+        String vowels = "AEFHILMNORSX"; 
 
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
@@ -18,14 +18,11 @@ public class Cheers {
                 System.out.println("Give me a " + letter + ": " + letter + "!");
             }
         }
-
+        
         System.out.println("What does that spell?");
 
-        StringBuilder cheers = new StringBuilder();
         for (int i = 0; i < count; i++) {
-            cheers.append(word).append(" ");
+            System.out.println(word + "!!!");
         }
-
-        System.out.println(cheers.toString().trim() + "!!!");
     }
 }
