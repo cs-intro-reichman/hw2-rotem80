@@ -1,35 +1,35 @@
 public class Cheers {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Please provide two arguments: a word and a number.");
-            return; // יציאה מהתוכנית אם לא הוזנו מספיק ארגומנטים
+            System.out.println("Usage: java Cheers <word> <count>");
+            return;
         }
 
-        String word = args[0];  // המילה (למשל "RUNI", "WOOL", "YAY")
-        int times = Integer.parseInt(args[1]);  // מספר הפעמים להדפיס את המילה בסוף
+        // קבלת הקלט והפיכתו לאותיות רישיות
+        String word = args[0].toUpperCase(); 
+        int count = Integer.parseInt(args[1]);
 
-        // עבור כל אות במילה
+        // קבוצת התנועות שמצריכות "an" במקום "a"
+        String vowels = "AEFHILMNORSX"; 
+
+        // לולאת הדפסת האותיות
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
-            if (isVowel(letter)) {
-                System.out.println("Give me an " + letter + ": " + letter + "!");
-            } else {
+
+            // בדיקה אם האות היא אחת מהתנועות (A, E, F, וכו')
+            if (vowels.indexOf(letter) == -1) {
                 System.out.println("Give me a " + letter + ": " + letter + "!");
+            } else {
+                System.out.println("Give me an " + letter + ": " + letter + "!");
             }
         }
-
-        // הדפסת "What does that spell?" אחרי כל אות
+        
+        // הדפסת המילה "What does that spell?"
         System.out.println("What does that spell?");
-        System.out.println(word.toUpperCase() + "!!!");
 
-        // הדפסת המילה בסוף מספר הפעמים שנדרש
-        for (int i = 0; i < times; i++) {
-            System.out.println(word.toUpperCase() + "!!!");
+        // לולאת הדפסת המילה עם "!!!"
+        for (int i = 0; i < count; i++) {
+            System.out.println(word + "!!!");
         }
-    }
-
-    // פונקציה לזהות אם האות היא תו תנועה (vowel)
-    public static boolean isVowel(char c) {
-        return "AEIOUaeiou".indexOf(c) != -1;
     }
 }
