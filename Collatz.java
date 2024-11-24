@@ -8,6 +8,7 @@ public class Collatz {
         int N = Integer.parseInt(args[0]);
         String mode = args[1].toLowerCase();
 
+        @SuppressWarnings("unused")
         boolean allSequencesReachOne = true;
 
         for (int seed = 1; seed <= N; seed++) {
